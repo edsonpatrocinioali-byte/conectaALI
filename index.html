@@ -828,6 +828,41 @@
             section {
                 padding: 3rem 1rem;
             }
+            .tooltip-list {
+    list-style: none;
+    padding: 0;
+}
+
+.tooltip-item {
+    position: relative;
+    padding: 0.5rem 0;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* Caixa escondida */
+.tooltip-text {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 120%;
+    background: #333;
+    color: #fff;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.4rem;
+    font-size: 0.8rem;
+    width: max-content;
+    max-width: 220px;
+    transition: opacity 0.3s;
+    z-index: 10;
+}
+
+/* Mostrar ao passar o mouse */
+.tooltip-item:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
         }
     </style>
 </head>
@@ -918,32 +953,45 @@
                     <h2>O Que Eu Acompanho Hoje</h2>
                     <p>Qual informação você sabe responder de cabeça? Faturamento, quantidade de clientes, estoque, custos, agenda, retorno de clientes. Esses são dados que muitas empresas já acompanham, mas nem sempre de forma organizada.</p>
                     
-                    <div class="items-list">
-                        <div class="item">
-                            <div class="item-icon">✓</div>
-                            <div class="item-content">Faturamento</div>
-                        </div>
-                        <div class="item">
-                            <div class="item-icon">✓</div>
-                            <div class="item-content">Quantidade de Clientes</div>
-                        </div>
-                        <div class="item">
-                            <div class="item-icon">✓</div>
-                            <div class="item-content">Estoque</div>
-                        </div>
-                        <div class="item">
-                            <div class="item-icon">✓</div>
-                            <div class="item-content">Custos</div>
-                        </div>
-                        <div class="item">
-                            <div class="item-icon">✓</div>
-                            <div class="item-content">Agenda</div>
-                        </div>
-                        <div class="item">
-                            <div class="item-icon">✓</div>
-                            <div class="item-content">Retorno de Clientes</div>
-                        </div>
-                    </div>
+                    <ul class="tooltip-list">
+
+    <li class="tooltip-item">✓ Faturamento
+        <span class="tooltip-text">
+            Total de dinheiro que a empresa recebe com vendas em um período.
+        </span>
+    </li>
+
+    <li class="tooltip-item">✓ Quantidade de Clientes
+        <span class="tooltip-text">
+            Número de clientes atendidos ou que compraram em um período.
+        </span>
+    </li>
+
+    <li class="tooltip-item">✓ Estoque
+        <span class="tooltip-text">
+            Controle dos produtos disponíveis para venda ou uso no negócio.
+        </span>
+    </li>
+
+    <li class="tooltip-item">✓ Custos
+        <span class="tooltip-text">
+            Todos os gastos necessários para manter o negócio funcionando.
+        </span>
+    </li>
+
+    <li class="tooltip-item">✓ Agenda
+        <span class="tooltip-text">
+            Organização de atendimentos, compromissos e horários da empresa.
+        </span>
+    </li>
+
+    <li class="tooltip-item">✓ Retorno de Clientes
+        <span class="tooltip-text">
+            Frequência com que os clientes voltam a comprar ou utilizar o serviço.
+        </span>
+    </li>
+
+</ul>
                 </div>
                 <div>
                     <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028566432/F4zFfc2SESapc4VuKyjeUm/sebrae-success-metrics-95dERmRPN4LKkTt5z89eKC.webp" alt="Métricas de sucesso">
